@@ -1,2 +1,3 @@
-# setup-python
-Guide to setting up a python project
+# Python Setup Template
+
+> Setting up a python project the right way!

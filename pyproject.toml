@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "test"
-version = "0.1.0"
-description = ""
+version = "2.0.0"
+description = "Example modern Python template"
 authors = ["Justin Chiou <chiou.kai@gmail.com>"]
 license = "MIT"
 

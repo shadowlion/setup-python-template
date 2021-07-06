@@ -1,0 +1,33 @@
+name: Test
+
+on: [push, pull_request]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies with Poetry
+        run: |
+          pip install poetry
+          poetry install
+      - name: Format with Black
+        run: poetry run black .
+
+      - name: Lint with flake8
+        run: poetry run flake8 .
+
+      - name: Format with isort
+        run: poetry run isort .
+
+      - name: Typecheck with mypy
+        run: poetry run mypy .
+
+      - name: Testing
+        run: poetry run pytest --cov=. tests/

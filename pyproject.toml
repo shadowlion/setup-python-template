@@ -11,11 +11,11 @@ python = "^3.8"
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.4"
 pytest-cov = "^2.12.1"
-pre-commit = "^2.13.0"
+pre-commit = "^2.15.0"
 flake8 = "^3.9.2"
 black = {version = "^21.9b0", allow-prereleases = true}
 mypy = "^0.910"
-isort = "^5.9.2"
+isort = "^5.9.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

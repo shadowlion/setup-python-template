@@ -5,6 +5,10 @@ on: [push, pull_request]
 jobs:
   ci:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.6", "3.7", "3.8", "3.9", "3.10"]
+    name: Python v${{ matrix.python-version }}
     steps:
       - uses: actions/checkout@v2
 
@@ -21,7 +25,7 @@ jobs:
         run: poetry run black .
 
       - name: Lint with flake8
-        run: poetry run flake8 .
+        run: poetry run flake8 app
 
       - name: Format with isort
         run: poetry run isort .
@@ -30,4 +34,4 @@ jobs:
         run: poetry run mypy .
 
       - name: Testing
-        run: poetry run pytest --cov=. tests/
+        run: poetry run pytest --cov=app

@@ -1,54 +1,24 @@
 [tool.poetry]
-name = "test"
-version = "2.0.0"
-description = "Example modern Python template"
-authors = ["Justin Chiou <chiou.kai@gmail.com>"]
+authors = ["Justin Chiou <justinchiou@duck.com>"]
+description = "Example Python repo setup"
 license = "MIT"
+name = "setup-python-repo"
+version = "3.0.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-isort = "^5.10.0"
-black = "^21.11b1"
 
-[tool.poetry.dev-dependencies]
-black = "^21.9b0"
-flake8 = "^4.0.1"
+[tool.poetry.group.dev.dependencies]
+black = "^22.10.0"
+flake8 = "^5.0.4"
 isort = "^5.10.1"
-mypy = "^0.920"
-pre-commit = "^2.16.0"
-pytest = "^6.2.4"
-pytest-cov = "^3.0.0"
+pre-commit = "^2.20.0"
+pytest = "^7.1.3"
+pytest-cov = "^4.0.0"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
-[tool.black]
-line-length = 79
-target-version = ['py38']
-include = '\.pyi?$'
-exclude = '''
-(
-  /(
-      \.eggs         # exclude a few common directories in the
-    | \.git          # root of the project
-    | \.hg
-    | \.mypy_cache
-    | \.tox
-    | \.venv
-    | _build
-    | buck-out
-    | build
-    | dist
-  )/
-  | foo.py           # also separately exclude a file named foo.py in
-                     # the root of the project
-)
-'''
+requires = ["poetry-core>=1.0.0"]
 
 [tool.isort]
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-line_length = 79
+profile = "black"

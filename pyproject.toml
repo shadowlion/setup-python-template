@@ -6,7 +6,7 @@ name = "setup-python-repo"
 version = "4.0.0"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.9"
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.3.1"
@@ -18,14 +18,10 @@ pytest-cov = "^4.0.0"
 build-backend = "poetry.core.masonry.api"
 requires = ["poetry-core>=1.0.0"]
 
-[tool.black]
-target-version = ["py311"]
-
 [tool.isort]
 profile = "black"
 
 [tool.ruff]
-target-version = "py311"
 line-length = 88
 exclude = ["*migrations*", "*tests*"]
 # Enable Pyflakes `E` and `F` codes by default.

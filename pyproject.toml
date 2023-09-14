@@ -30,4 +30,4 @@ ignore = ["E501", "E741"]
 format = "github"
 
 [tool.coverage.run]
-omit = [".venv/*", "tests/*", "setup.py"]
+omit = [".venv/*", "**/tests/*", "**/conftest.py", "**/test_*.py"]

@@ -3,16 +3,13 @@ authors = ["Justin Chiou <justinchiou@duck.com>"]
 description = "Example Python repo setup"
 license = "MIT"
 name = "setup-python-repo"
-version = "3.0.0"
+version = "4.0.0"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.11"
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.10.0"
-flake8 = "^5.0.4"
-isort = "^5.10.1"
-mypy = "^0.982"
+coverage = "^7.3.1"
 pre-commit = "^2.20.0"
 pytest = "^7.1.3"
 pytest-cov = "^4.0.0"
@@ -21,5 +18,20 @@ pytest-cov = "^4.0.0"
 build-backend = "poetry.core.masonry.api"
 requires = ["poetry-core>=1.0.0"]
 
+[tool.black]
+target-version = ["py311"]
+
 [tool.isort]
 profile = "black"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 88
+exclude = ["*migrations*", "*tests*"]
+# Enable Pyflakes `E` and `F` codes by default.
+select = ["E", "F"]
+ignore = ["E501", "E741"]
+format = "github"
+
+[tool.coverage.run]
+omit = [".venv/*", "tests/*", "setup.py"]
